@@ -1,33 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Zeina Hanani Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zeina Hanani — Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; background: #f7f9fc; color: #2c3e50; }
-    h1 { text-align: center; color: #2980b9; }
-    p { text-align: center; }
-    ul { list-style-type: none; padding: 0; }
-    li { margin: 15px 0; }
-    a { color: #2980b9; font-weight: bold; text-decoration: none; font-size: 18px; }
-    a:hover { text-decoration: underline; }
-    .container { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f0eeff;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+    }
+
+    .wrap {
+      background: #EEEDFE;
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background:#2e2b5f;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #EEEDFE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 500;
+      color: #3C3489;
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-size: 24px;
+      font-weight: 500;
+      color: #f0eeff;
+      margin-bottom: 4px;
+    }
+
+    .hero .subtitle {
+      font-size: 13px;
+      color: #AFA9EC;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .hero .about {
+      font-size: 13px;
+      color: #8884b8;
+      line-height: 1.7;
+    }
+
+    /* ── Contact ── */
+    .contact-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: 0.5px solid #AFA9EC;
+      color: #3C3489;
+      text-decoration: none;
+      background: #fff;
+      transition: background 0.15s;
+    }
+
+    .contact-btn:hover { background: #CECBF6; }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #534AB7;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: #fff;
+      border: 0.5px solid #CECBF6;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.15s;
+    }
+
+    .card:hover { border-color: #AFA9EC; }
+    .card.featured { border: 2px solid #534AB7; }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #26215C;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .card p {
+      font-size: 12px;
+      color: #888780;
+      line-height: 1.5;
+    }
+
+    /* ── Badges ── */
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      padding-top: 1rem;
+      border-top: 0.5px solid #CECBF6;
+      font-size: 12px;
+      color: #7F77DD;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Zeina Hanani Portfolio</h1>
-    <p>Here are some of my projects:</p>
-    <ul>
- <li><a href="https://github.com/zeina240/movie_app_flutter.git" target="_blank">Movie App (Flutter)</a></li>
-      <li><a href="https://github.com/zeina240/RealTimeBeautyFilter.git" target="_blank">Real-Time Beauty Filter (OpenCV)</a></li>
-      <li><a href="https://github.com/zeina240/Restaurant-project.git" target="_blank">Restaurant Project</a></li>
-      <li><a href="https://github.com/zeina240/intelligent-drone-delivery.git" target="_blank">Intelligent Drone Delivery</a></li>
-      <li><a href="https://github.com/zeina240/Z-R-Car-Rental.git" target="_blank">Z-R Car Rental</a></li>
-      <li><a href="https://github.com/zeina240/p2p-chat-file-transfer.git" target="_blank">P2P Chat & File Transfer</a></li>
-     
-    </ul>
-    <p>Feel free to explore each project and check the code!</p>
+
+  <div class="wrap">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="avatar">ZH</div>
+      <div>
+        <h1>Zeina Hanani</h1>
+        <p class="subtitle">Software developer — mobile, computer vision, web &amp; networking</p>
+        <p class="about">
+          Passionate developer with hands-on experience building mobile apps,
+          real-time computer vision systems, e-commerce platforms, AI-driven
+          applications, and peer-to-peer networking tools. Always exploring
+          new technologies and solving real-world problems through code.
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-row">
+      <a class="contact-btn" href="https://github.com/zeina240" target="_blank">
+        <i class="ti ti-brand-github" style="font-size:16px"></i> GitHub
+      </a>
+      <a class="contact-btn" href="mailto:zeina@example.com">
+        <i class="ti ti-mail" style="font-size:16px"></i> Email
+      </a>
+    </div>
+
+    <!-- Projects -->
+    <p class="section-label">Projects</p>
+
+    <div class="grid">
+
+      <!-- E Marketing Lab co. (featured, newest) -->
+      <a class="card featured" href="https://github.com/zeina240/e-marketing" target="_blank">
+        <div style="margin-bottom:8px">
+          <span class="badge" style="background:#E6F1FB;color:#185FA5">New</span>
+        </div>
+        <div class="card-icon" style="background:#EEEDFE;color:#534AB7">
+          <i class="ti ti-robot"></i>
+        </div>
+        <h3>E Marketing Lab co.</h3>
+        <p>AI-powered marketing services platform connecting clients with professional marketers and AI-driven strategy tools.</p>
+        <span class="badge" style="background:#EEEDFE;color:#3C3489">AI / Marketing</span>
+      </a>
+
+      <!-- Z&H Store -->
+      <a class="card" href="https://github.com/zeina240/Z-HStore.git" target="_blank">
+        <div class="card-icon" style="background:#E1F5EE;color:#0F6E56">
+          <i class="ti ti-shopping-cart"></i>
+        </div>
+        <h3>Z&amp;H Store</h3>
+        <p>Full e-commerce store with product listings, cart, and order management.</p>
+        <span class="badge" style="background:#E1F5EE;color:#085041">E-commerce</span>
+      </a>
+
+      <!-- Z-R Car Rental -->
+      <a class="card" href="https://github.com/zeina240/Z-R-Car-Rental.git" target="_blank">
+        <div class="card-icon" style="background:#FAECE7;color:#993C1D">
+          <i class="ti ti-car"></i>
+        </div>
+        <h3>Z-R Car Rental</h3>
+        <p>Car rental platform with booking and management features.</p>
+        <span class="badge" style="background:#FAEEDA;color:#633806">Web App</span>
+      </a>
+
+      <!-- Movie App -->
+      <a class="card" href="https://github.com/zeina240/movie_app_flutter.git" target="_blank">
+        <div class="card-icon" style="background:#E6F1FB;color:#185FA5">
+          <i class="ti ti-device-mobile"></i>
+        </div>
+        <h3>Movie App</h3>
+        <p>Flutter mobile app for browsing and exploring movies.</p>
+        <span class="badge" style="background:#E6F1FB;color:#0C447C">Flutter</span>
+      </a>
+
+      <!-- Real-Time Beauty Filter -->
+      <a class="card" href="https://github.com/zeina240/RealTimeBeautyFilter.git" target="_blank">
+        <div class="card-icon" style="background:#E1F5EE;color:#0F6E56">
+          <i class="ti ti-camera"></i>
+        </div>
+        <h3>Real-Time Beauty Filter</h3>
+        <p>Live facial filter using OpenCV computer vision.</p>
+        <span class="badge" style="background:#E1F5EE;color:#085041">OpenCV</span>
+      </a>
+
+      <!-- Restaurant -->
+      <a class="card" href="https://github.com/zeina240/Restaurant-project.git" target="_blank">
+        <div class="card-icon" style="background:#FAEEDA;color:#854F0B">
+          <i class="ti ti-tools-kitchen-2"></i>
+        </div>
+        <h3>Restaurant Project</h3>
+        <p>Web-based restaurant management and ordering system.</p>
+        <span class="badge" style="background:#FAEEDA;color:#633806">Web</span>
+      </a>
+
+      <!-- Drone -->
+      <a class="card" href="https://github.com/zeina240/intelligent-drone-delivery.git" target="_blank">
+        <div class="card-icon" style="background:#EEEDFE;color:#534AB7">
+          <i class="ti ti-drone"></i>
+        </div>
+        <h3>Intelligent Drone Delivery</h3>
+        <p>Smart drone routing and delivery simulation system.</p>
+        <span class="badge" style="background:#EEEDFE;color:#3C3489">AI / Routing</span>
+      </a>
+
+      <!-- P2P -->
+      <a class="card" href="https://github.com/zeina240/p2p-chat-file-transfer.git" target="_blank">
+        <div class="card-icon" style="background:#FBEAF0;color:#993556">
+          <i class="ti ti-messages"></i>
+        </div>
+        <h3>P2P Chat &amp; File Transfer</h3>
+        <p>Peer-to-peer real-time chat with file sharing capability.</p>
+        <span class="badge" style="background:#FBEAF0;color:#72243E">Networking</span>
+      </a>
+
+    </div>
+
+    <p class="footer">
+      Click any card to view the source code on GitHub &nbsp;·&nbsp;
+      E Marketing Lab co. is highlighted as the latest project
+    </p>
+
   </div>
+
 </body>
 </html>
